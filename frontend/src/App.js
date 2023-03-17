@@ -1,12 +1,14 @@
-import TextEditor from './components/TextEditor';
-
-import './App.css';
+import TextEditor from "./components/TextEditor";
+import "./styles/CommentBox.css";
+import "./styles/CommentSection.css";
+import "./styles/Error.css";
+import "./styles/Success.css";
 
 function App() {
   return (
-    <div className="App">
-      <TextEditor/>
-    </div>    
+    <>
+      <TextEditor />
+    </>
   );
 }
 
