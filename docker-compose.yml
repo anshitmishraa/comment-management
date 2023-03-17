@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+   frontend:
+    build: comment-management/frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb+srv://akshit:akshit@cluster0.uhcdy.mongodb.net/?retryWrites=true&w=majority
+
+  backend:
+    build: comment-management/backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - frontend
