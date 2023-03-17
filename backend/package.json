@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-     "build": "npm run build:js"
+    "build": "npm run clean && npm run compile",
+    "clean": "if exist dist rmdir /s /q dist",
+    "compile": "npx babel src --out-dir dist"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,7 @@
     "mongoose": "^7.0.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "nodemon": "^2.0.21"
   }
 }
