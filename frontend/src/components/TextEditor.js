@@ -18,10 +18,6 @@ function TextEditor() {
   const addReplyCommentMessage = "Reply has been added successfully";
 
   useEffect(() => {
-    fetchComments();
-  }, []);
-
-  useEffect(() => {
     // Remove the first success message from the array after 3 seconds
     if (success.length > 0) {
       const timeoutId = setTimeout(() => {
@@ -74,7 +70,6 @@ function TextEditor() {
         .post("http://localhost:5000/comments", { content: text })
         .then((response) => {
           setSuccess([...success, addCommentMessage]);
-          fetchComments();
           setText("Write a comment...");
         })
         .catch((error) => {
@@ -90,7 +85,6 @@ function TextEditor() {
         content: replyContent,
       });
       setSuccess([...success, addReplyCommentMessage]);
-      fetchComments();
     } catch (error) {
       setErrorMessage([...errorMessage, error.response.data.message]);
     }
@@ -110,7 +104,15 @@ function TextEditor() {
 
   return (
     <div className="comment-section">
-      <h2>Comment</h2>
+      <div class="container">
+        <div class="top-left">
+          <h1>Comment</h1>
+        </div>
+        <div class="top-right">
+          <button onClick={fetchComments}>Fetch Comment</button>
+        </div>
+      </div>
+
       <div>
         <button onClick={handleBoldClick} className={isBold ? "focused" : ""}>
           <i className="fas fa-bold"></i>

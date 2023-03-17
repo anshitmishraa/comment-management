@@ -67,3 +67,22 @@ button:disabled {
   color: white;
   cursor: not-allowed;
 }
+
+.container {
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  height: 100px;
+}
+
+.top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
