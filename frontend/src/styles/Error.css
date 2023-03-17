@@ -1,0 +1,25 @@
+.error-message {
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f44336;
+  color: white;
+  padding: 1em;
+  margin-top: 1em;
+  margin-left: 15em;
+  margin-right: 15em;
+  z-index: 999;
+  animation: fadeOut 10s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
