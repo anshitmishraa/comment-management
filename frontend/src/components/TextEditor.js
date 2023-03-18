@@ -44,7 +44,7 @@ function TextEditor() {
   // API call to get comments
   async function fetchComments() {
     try {
-      const response = await axios.get("http://localhost:5000/comments");
+      const response = await axios.get("https://comment-management.vercel.app/comments");
       setSuccess([...success, fetchCommentMessage]);
       setComments(response.data);
     } catch (error) {
@@ -67,7 +67,7 @@ function TextEditor() {
     event.preventDefault();
     if (text) {
       axios
-        .post("http://localhost:5000/comments", { content: text })
+        .post("https://comment-management.vercel.app/comments", { content: text })
         .then((response) => {
           setSuccess([...success, addCommentMessage]);
           setText("Write a comment...");
@@ -81,7 +81,7 @@ function TextEditor() {
   // Handle submit button click for reply
   async function handleReplySubmit(commentId, replyContent) {
     try {
-      await axios.post(`http://localhost:5000/comments/${commentId}/replies`, {
+      await axios.post(`https://comment-management.vercel.app/comments/${commentId}/replies`, {
         content: replyContent,
       });
       setSuccess([...success, addReplyCommentMessage]);
