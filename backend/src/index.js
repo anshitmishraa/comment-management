@@ -16,6 +16,11 @@ connectDB();
 
 const port = process.env.PORT || 5000;
 
+// routes for api call
+app.get('/', (req, res)=>{
+    res.send("Hello world.");
+})
+
 // Register routes
 app.use("/comments", comment);
 
