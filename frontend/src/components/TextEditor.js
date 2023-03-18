@@ -85,6 +85,7 @@ function TextEditor() {
       await axios.post(`https://comment-management.vercel.app/comments/${commentId}/replies`, {
         content: replyContent,
       });
+      fetchComments();
       setSuccess([...success, addReplyCommentMessage]);
     } catch (error) {
       setErrorMessage([...errorMessage, error.response.data.message]);
