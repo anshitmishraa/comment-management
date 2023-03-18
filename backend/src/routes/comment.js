@@ -46,6 +46,7 @@ router.post("/", (req, res) => {
 
 // Endpoint to get all comments with their replies
 router.get("/", (req, res) => {
+  console.log("in");
   Comment.find({})
     .populate("author", "name")
     .populate({
