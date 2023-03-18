@@ -70,6 +70,7 @@ function TextEditor() {
         .post("https://comment-management.vercel.app/comments", { content: text })
         .then((response) => {
           setSuccess([...success, addCommentMessage]);
+          fetchComments();
           setText("Write a comment...");
         })
         .catch((error) => {
