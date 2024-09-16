@@ -8,7 +8,7 @@ To install and run this backend on your local machine, follow these steps:
 1. Clone this repository using the following command:
 
 ```bash
-git clone https://github.com/your-username/commenting-system-backend.git
+git clone https://github.com/anshitmishraa/comment-management.git
 ```
 
 2. Install the required dependencies using npm:
